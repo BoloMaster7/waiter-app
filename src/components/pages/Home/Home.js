@@ -3,6 +3,7 @@ import Table from '../../features/Table';
 import { ListGroup, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import { Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -18,7 +19,8 @@ const Home = () => {
   </ListGroup.Item>
   <ListGroup.Item>
     Table 2
-    <Button variant="primary">Show more</Button>
+    <Button variant="primary" component={NavLink} to="/tableform" >Show more
+    </Button>
   </ListGroup.Item>
   <ListGroup.Item>
     Table 3

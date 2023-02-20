@@ -92,7 +92,7 @@ const TableForm = ({ action, actionText, ...props }) => {
             )}
           </Row>
           {status === "Busy" && (
-            <Row>
+            <Row className="mb-3" >
               <Col md={1}>
                 <Form.Label>
                   <b>Bill:</b>
