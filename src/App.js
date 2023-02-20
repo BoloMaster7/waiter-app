@@ -5,7 +5,6 @@ import { Container } from 'react-bootstrap';
 import { Routes, Route} from 'react-router-dom';
 import Home from './components/pages/Home/Home';
 import NotFound from './components/pages/NotFound/NotFound';
-import EditTable from './components/features/EditTable';
 import TableForm from './components/features/TableForm';
 
 function App() {
