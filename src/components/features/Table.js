@@ -13,7 +13,7 @@ const TableForm = ({ action, actionText, ...props }) => {
   const [content, setContent] = useState(props.content || '');
   const { register, handleSubmit: validate, formState: { errors } } = useForm();
   const [contentError, setContentError] = useState(false);
-  const [dateError, setDateError] = useState(false)
+  // const [dateError, setDateError] = useState(false)
   const { id } = useParams();
   const maxPeople = 10
 
