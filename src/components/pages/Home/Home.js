@@ -10,15 +10,11 @@ const tables = useSelector(getAllTables)
   return (
     <div>
     <h1 className="m-2">All tables</h1>
-    {tables.map((table) => (
+    {tables.map((table, index) => (
       <Table
-        key={table.id}
-        id={table.id}
-        number={table.id}
-        status={table.status}
-        people={table.peopleAmount}
-        maxPeople={table.maxPeopleAmount}
-        bill={table.bill}
+      key={index} 
+      id={table.id}
+      status={table.status}
       />
     ))}
   </div>

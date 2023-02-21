@@ -8,8 +8,7 @@ const TableForm = ({ action, actionText, ...props }) => {
   const [people, setPeople] = useState(props.people|| '');
   const [status, setStatus] = useState(props.status || '');
   const [bill, setBill] = useState(props.bill || '');
-  // const [shortDescription, setShortDescription] = useState(props.shortDescription || '');
-  // const [category, setCategory] = useState(props.category || '');
+
   const [content, setContent] = useState(props.content || '');
   const { register, handleSubmit: validate, formState: { errors } } = useForm();
   const [contentError, setContentError] = useState(false);

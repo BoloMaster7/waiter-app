@@ -6,8 +6,22 @@ import { Routes, Route} from 'react-router-dom';
 import Home from './components/pages/Home/Home';
 import NotFound from './components/pages/NotFound/NotFound';
 import TableForm from './components/features/TableForm';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchTablesStatus } from './redux/tablesStatusRedux';
+import { fetchTable } from './redux/tablesRedux';
+
+
 
 function App() {
+  
+
+  const dispatch = useDispatch();
+  
+  useEffect(() => dispatch(fetchTable()), [dispatch])
+  useEffect(() => dispatch(fetchTablesStatus()), [dispatch])
+
+
   return (
   <main>
   <Container>
