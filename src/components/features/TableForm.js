@@ -27,7 +27,22 @@ const TableForm = ({ action, actionText, ...props }) => {
     <div>
     <Row className="mb-5">
       <h1>Table {id} </h1>
-      test123
+      <Form onSubmit={validate(handleSubmit)}>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label><strong>Status</strong></Form.Label>
+          <Form.Control
+          {...register("title", { required: true, minLength: 3 })}
+          value={status}
+          onChange={e => setStatus(e.target.value)}
+          type="text" placeholder="Enter title"
+        />
+        {errors.people && <small className="d-block form-text text-danger mt-2">
+          Title is too short (min is 3)</small>}
+</Form.Group>
+
+
+
+</Form>
     </Row>
   </div>
   );

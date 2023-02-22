@@ -21,6 +21,8 @@ export const fetchTable = () => {
   }
 }
 
+
+
 export const editTableRequest = (updatedTable) => {
   return (dispatch) => {
     const options = {
