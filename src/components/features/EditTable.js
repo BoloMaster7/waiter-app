@@ -13,8 +13,8 @@ const EditTable= () => {
     <TableForm
     actionText="Change"
     id={editTables.id}
-    people={editTables.people}
-    maxPeople={editTables.maxPeople}
+    peopleAmount={editTables.peopleAmount}
+    maxPeopleAmount={editTables.maxPeopleAmount}
     status={editTables.status}
     bill={editTables.bill}
   />
