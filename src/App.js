@@ -29,6 +29,7 @@ function App() {
   <Routes>
   <Route path="/" element={<Home />} />
   <Route path="/tableform" element={<TableForm />} />
+
   <Route path="*" element={<NotFound />} />
   </Routes>
   <Footer />

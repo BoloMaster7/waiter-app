@@ -7,7 +7,7 @@ import TableForm from './TableForm';
 const EditTable= () => {
 
   const { id } = useParams();
-  const editTables = useSelector(state => getTableById(state, id))
+  const editTables = useSelector(status => getTableById(status, id))
 
   return (
     <TableForm
