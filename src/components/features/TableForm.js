@@ -32,7 +32,8 @@ const TableForm = ({ action, actionText, ...props }) => {
     // }
   };
   return (
-    <div>
+    <div style={{
+      width: 350,}}>
     <Row className="mb-5">
       <h1>Table {id} </h1>
       <Form onSubmit={validate(handleSubmit)}>
@@ -53,7 +54,7 @@ const TableForm = ({ action, actionText, ...props }) => {
 </Form.Group>
 
 
-<Row className="mb-3 w-25 ">
+<Row className="mb-3 w-50 ">
 <Form.Group className="mb-3" 
 as={Col} controlId="formPeopleAmount" >
           <Form.Label><strong>People</strong></Form.Label>
@@ -67,11 +68,17 @@ as={Col} controlId="formPeopleAmount" >
         {errors.title && <small className="d-block form-text text-danger mt-2">
           Title is too short (min is 3)</small>}
 </Form.Group>
-
-<Form.Group as={Col} controlId="formGridCity"
+/
+<Form.Group as={Col} controlId="maxPeopleAmount"
 style={{ width: "150px"}}>
           <Form.Label>City</Form.Label>
-          <Form.Control />
+          <Form.Control 
+          {...register("people Amount", { required: true })}
+          value={maxPeopleAmount}
+          onChange={e => setMaxPeopleAmount(e.target.value)}
+          type="number" placeholder="Enter people Amount"
+          // width= '25%'
+        />
         </Form.Group>
 </Row>
 
