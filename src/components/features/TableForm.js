@@ -17,20 +17,22 @@ const TableForm = ({ action, actionText, ...props }) => {
   const [bill, setBill] = useState(props.bill || '');
 
 
-  const [content, setContent] = useState(props.content || '');
+
   const { register, handleSubmit: validate, formState: { errors } } = useForm();
-  const [contentError, setContentError] = useState(false);
+ 
  
   const { id } = useParams();
 
 
-  const handleSubmit = () => {
-    setContentError(!content)
-    // setDateError(!publishedDate)
-    // if(content && publishedDate) {
-    //   action({ title, author, publishedDate, shortDescription, content, category });
-    // }
+  const handleSubmit =  () => {
+    action({ id, peopleAmount, maxPeopleAmount, bill, status })
   };
+
+if (peopleAmount > maxPeopleAmount) setPeopleAmount(maxPeopleAmount)
+if (maxPeopleAmount > 10) setMaxPeopleAmount("10")
+// if ((props.status) === "Free" || (props.status) === "Busy" )  setPeopleAmount("0")
+
+
   return (
     <div style={{
       width: 350,}}>
@@ -62,28 +64,28 @@ as={Col} controlId="formPeopleAmount" >
           {...register("people Amount", { required: true })}
           value={peopleAmount}
           onChange={e => setPeopleAmount(e.target.value)}
-          type="number" placeholder="Enter people Amount"
+          type="number" min="0" placeholder="Enter people Amount"
           // width= '25%'
         />
-        {errors.title && <small className="d-block form-text text-danger mt-2">
-          Title is too short (min is 3)</small>}
+        
 </Form.Group>
 /
 <Form.Group as={Col} controlId="maxPeopleAmount"
 style={{ width: "150px"}}>
-          <Form.Label>City</Form.Label>
+          <Form.Label>Max </Form.Label>
           <Form.Control 
           {...register("people Amount", { required: true })}
           value={maxPeopleAmount}
           onChange={e => setMaxPeopleAmount(e.target.value)}
-          type="number" placeholder="Enter people Amount"
+          type="number" min="0" placeholder="Enter people Amount"
           // width= '25%'
         />
         </Form.Group>
 </Row>
 
 
-if ({status }=== 'Busy'){
+if ({!status }=== "Busy"){
+
 <Form.Group className="w-20" controlId="formBasicEmail">
           <Form.Label><strong>Bill</strong></Form.Label>
           <Form.Control
@@ -92,8 +94,7 @@ if ({status }=== 'Busy'){
           onChange={e => setBill(e.target.value)}
           type="number" placeholder="Enter title"
         />
-        {errors.title && <small className="d-block form-text text-danger mt-2">
-          Title is too short (min is 3)</small>}
+      
 </Form.Group>
 }
 
