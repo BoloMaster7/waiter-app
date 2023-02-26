@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { getAllStatus } from "../../redux/tablesStatusRedux";
 
 
+
 const TableForm = ({ action, actionText, ...props }) => {
 
 
@@ -82,21 +83,18 @@ style={{ width: "150px"}}>
         />
         </Form.Group>
 </Row>
-
-
-if ({!status }=== "Busy"){
-
-<Form.Group className="w-20" controlId="formBasicEmail">
-          <Form.Label><strong>Bill</strong></Form.Label>
+    {status === "Busy" && (
+<Form.Group style={{display: !status === "Busy" }} className="w-20" controlId="formBasicEmail">
+          <Form.Label><strong>Bill $</strong></Form.Label>
           <Form.Control
           {...register("Bill ", { required: true, minLength: 1 })}
-          value={bill}
+           value={status === "Busy" ? bill : 0}
           onChange={e => setBill(e.target.value)}
-          type="number" placeholder="Enter title"
+          type="number" placeholder="Enter bill"
         />
       
 </Form.Group>
-}
+)}
 
 
 </Form>
