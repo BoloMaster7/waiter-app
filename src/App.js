@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 import { fetchTablesStatus } from './redux/tablesStatusRedux';
 import { fetchTable } from './redux/tablesRedux';
 import EditTable from './components/features/EditTable';
-
+import Spinner from 'react-bootstrap/Spinner';
 
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
   return (
   <main>
   <Container>
+    
   <Header />
   <Routes>
   <Route path="/" element={<Home />} />

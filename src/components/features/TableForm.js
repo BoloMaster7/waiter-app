@@ -73,7 +73,7 @@ as={Col} controlId="formPeopleAmount" >
 /
 <Form.Group as={Col} controlId="maxPeopleAmount"
 style={{ width: "150px"}}>
-          <Form.Label>Max </Form.Label>
+          <Form.Label><strong>Max</strong></Form.Label>
           <Form.Control 
           {...register("people Amount", { required: true })}
           value={maxPeopleAmount}

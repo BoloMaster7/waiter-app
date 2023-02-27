@@ -1,6 +1,6 @@
 import {  Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import Spinner from "react-bootstrap/Spinner";
 
 const Table = ({status, id}) => {
 
