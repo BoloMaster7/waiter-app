@@ -2,10 +2,14 @@ import React from 'react';
 import Table from '../../features/Table';
 import { useSelector } from 'react-redux';
 import { getAllTables } from '../../../redux/tablesRedux';
+import Spinner from "react-bootstrap/Spinner";
 
 const Home = () => {
 
 const tables = useSelector(getAllTables)
+
+console.log(tables.length)
+if(tables.length == 0) return (<Spinner/>)
 
   return (
     <div>
