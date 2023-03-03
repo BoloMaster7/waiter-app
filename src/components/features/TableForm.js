@@ -13,7 +13,7 @@ const TableForm = ({ action, actionText, ...props }) => {
   const statusInfo = useSelector(getAllStatus)
   const [peopleAmount, setPeopleAmount] = useState(props.peopleAmount|| '');
   const [maxPeopleAmount, setMaxPeopleAmount] = useState(props.maxPeopleAmount|| '');
-
+  const [statusError, setStatusError] = useState(false);
   const [status, setStatus] = useState(props.status || '');
   const [bill, setBill] = useState(props.bill || '');
 
@@ -26,6 +26,7 @@ const TableForm = ({ action, actionText, ...props }) => {
 
 
   const handleSubmit =  () => {
+    setStatusError(!status);
     action({ id, peopleAmount, maxPeopleAmount, bill, status })
   };
 
@@ -53,6 +54,11 @@ if (maxPeopleAmount > 10) setMaxPeopleAmount("10")
                       {category}
                     </option>
                      ))}
+                       {statusError && (
+                <small className="d-block form-text text-danger mt-2">
+                  Please choose status
+                </small>
+              )}
      </Form.Select>
 </Form.Group>
 
@@ -81,6 +87,16 @@ style={{ width: "150px"}}>
           type="number" min="0" placeholder="Enter people Amount"
           // width= '25%'
         />
+          {errors.peopleAmount && (
+                <small className="d-block form-text text-danger mt-2">
+                  This field is required
+                </small>
+              )}
+              {errors.maxPeopleAmount && (
+                <small className="d-block form-text text-danger mt-2">
+                  This field is required
+                </small>
+              )}
         </Form.Group>
 </Row>
     {status === "Busy" && (
