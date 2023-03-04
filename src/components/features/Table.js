@@ -1,4 +1,4 @@
-import {  Button, Row, Col } from "react-bootstrap";
+import {  Button, Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 
@@ -6,9 +6,9 @@ const Table = ({status, id}) => {
 
  
   return (
-    
+    <Card>
+    <Card.Body>
     <Row>
-      
     <Row className="align-items-end mb-3">
       <Col className="col-2 d-flex align-items-end justify-content-between">
         <h2 className="mb-0">Table {id}</h2>
@@ -25,7 +25,8 @@ const Table = ({status, id}) => {
       </Col>
     </Row>
   </Row>
- 
+  </Card.Body>
+            </Card>
   );
 }
 
